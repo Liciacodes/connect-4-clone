@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameCircle from "./GameCircle";
 import "../Game.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import { isDraw, isWinner } from "../helper";
+import { getComputerMove, isDraw, isWinner } from "../helper";
 import {
   GAME_STATE_PLAYING,
   GAME_STATE_WIN,
@@ -22,12 +22,28 @@ const GameBoard = () => {
   const [winPlayer, setwinPlayer] = useState(NO_PLAYER);
 
   console.log(gameBoard);
+
+  useEffect(() => {
+    console.log("init game");
+    initGame();
+  }, []);
+
+  const initGame = () => {
+    setGameState(GAME_STATE_PLAYING);
+    setGameBoard(Array(16).fill(NO_PLAYER));
+    setCurrentPlayer(PLAYER_1);
+  };
+
   const initBoard = () => {
     const circles = [];
     for (let i = 0; i < NO_CIRCLES; i++) {
       circles.push(renderCircle(i));
     }
     return circles;
+  };
+
+  const suggestMove = () => {
+    circleClicked(getComputerMove(gameBoard));
   };
 
   const circleClicked = (id) => {
@@ -74,7 +90,7 @@ const GameBoard = () => {
         winPlayer={winPlayer}
       />
       <div className="gameBoard">{initBoard()}</div>
-      <Footer />
+      <Footer onNewGameClick={initGame} onSugestClick={suggestMove} />
     </>
   );
 };
