@@ -16,7 +16,7 @@ import {
 } from "../Constants";
 
 const GameBoard = () => {
-  const [gameBoard, setGameBoard] = useState(Array(16).fill(NO_PLAYER));
+  const [gameBoard, setGameBoard] = useState(Array(NO_CIRCLES).fill(NO_PLAYER));
   const [currentPlayer, setCurrentPlayer] = useState(PLAYER_1);
   const [gameState, setGameState] = useState(GAME_STATE_PLAYING);
   const [winPlayer, setwinPlayer] = useState(NO_PLAYER);
@@ -30,7 +30,7 @@ const GameBoard = () => {
 
   const initGame = () => {
     setGameState(GAME_STATE_PLAYING);
-    setGameBoard(Array(16).fill(NO_PLAYER));
+    setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
     setCurrentPlayer(PLAYER_1);
   };
 
@@ -90,7 +90,11 @@ const GameBoard = () => {
         winPlayer={winPlayer}
       />
       <div className="gameBoard">{initBoard()}</div>
-      <Footer onNewGameClick={initGame} onSugestClick={suggestMove} />
+      <Footer
+        onNewGameClick={initGame}
+        onSugestClick={suggestMove}
+        gameState={gameState}
+      />
     </>
   );
 };
