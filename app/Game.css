@@ -116,3 +116,112 @@ body {
 .player_2 {
   background-color: var(--player-player2);
 }
+
+/* @media only screen and (max-width: 600px) {
+  .app-container {
+    width: 90%;
+    margin-left: -45%;
+    top: 5%;
+    left: 50%;
+  }
+
+  .header {
+    left: 50%;
+    top: 5px;
+    width: 100%;
+    margin-left: -50%;
+  }
+
+  .header-text {
+    font-size: 24px;
+  }
+
+  .gameBoard {
+    width: 100%;
+    margin-left: 0;
+    padding: 1px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gameCircle {
+    width: 20vw;
+    height: 20vw;
+    margin: 2px;
+    border: 3px solid black;
+  }
+
+  .footer {
+    top: 95%;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+  }
+
+  .footer button {
+    width: 100%;
+    margin-left: 0;
+    font-size: 16px;
+  }
+} */
+@media only screen and (max-width: 600px) {
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .app-container {
+    width: 90%;
+    margin-left: -45%;
+    top: 5%;
+    left: 50%;
+    position: relative;
+    padding-bottom: 120px; /* Ensure space for footer */
+    box-sizing: border-box;
+  }
+
+  .header {
+    left: 50%;
+    top: 20px;
+    width: 100%;
+    margin-left: -50%;
+  }
+
+  .header-text {
+    font-size: 24px;
+  }
+
+  .gameBoard {
+    width: 100%;
+    margin-left: 0;
+    padding: 1px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gameCircle {
+    width: 20vw;
+    height: 20vw;
+    margin: 2px;
+    border: 3px solid black;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+    padding: 10px 0;
+    background-color: var(--panel-background-color);
+  }
+
+  .footer button {
+    width: 100%;
+    margin-left: 0;
+    font-size: 16px;
+  }
+}
