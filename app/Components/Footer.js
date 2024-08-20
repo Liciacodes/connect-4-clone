@@ -11,7 +11,7 @@ const Footer = ({ onNewGameClick, onSugestClick, gameState }) => {
 
     return <button onClick={onNewGameClick}>New Game</button>;
   };
-  return <div className="footer panel header">{renderButtons()}</div>;
+  return <div className="footer panel ">{renderButtons()}</div>;
 };
 
 export default Footer;

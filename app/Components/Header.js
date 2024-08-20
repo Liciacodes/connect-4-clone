@@ -10,11 +10,11 @@ const Header = ({ currentPlayer, gameState, winPlayer }) => {
   const renderLabel = () => {
     switch (gameState) {
       case GAME_STATE_PLAYING:
-        return <div>Player {currentPlayer} Turn</div>;
+        return <div className="center">Player {currentPlayer} Turn</div>;
       case GAME_STATE_WIN:
-        return <div>Player {winPlayer} Wins</div>;
+        return <div className="center">Player {winPlayer} Wins</div>;
       case GAME_STATE_DRAW:
-        return <div>Game is a draw!</div>;
+        return <div className="center">Game is a draw!</div>;
       default:
     }
   };
