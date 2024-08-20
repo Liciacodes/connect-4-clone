@@ -129,11 +129,11 @@ body {
 
   .app-container {
     width: 90%;
-    margin-left: -45%;
+    margin-left: -45.5%;
     top: 5%;
     left: 50%;
     position: relative;
-    padding-bottom: 120px; /* Ensure space for footer */
+    padding-bottom: 120px;
     box-sizing: border-box;
   }
 
